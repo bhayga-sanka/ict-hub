@@ -1,10 +1,13 @@
-# Firestore setup
+# Firebase Firestore setup
 
-1. Open https://console.firebase.google.com/project/ict-hub-a2a85/firestore
-2. Create a Firestore database (production mode is fine).
-3. Open the Rules tab and replace the rules with the contents of firestore.rules in this repository, then Publish.
-4. Open Authentication > Sign-in method and enable Email/Password.
-5. In Authentication > Users, add an administrator email/password. Use that account on the Student Manager login screen.
-6. Open the deployed site over HTTPS and sign in.
+The web app code is connected to the existing Firebase project `ict-hub-a2a85`. Complete these one-time console steps:
 
-Security note: these starter rules permit any signed-in Firebase Authentication account to access the collections. Do not create student accounts in this Firebase project while using these rules. For a multi-role production system, restrict access to an administrator UID/custom claim before collecting real student records.
+1. Open [Firestore Database](https://console.firebase.google.com/project/ict-hub-a2a85/firestore) and create a database. Choose a location close to your users (for example, asia-south1 if available).
+2. Open [Authentication users](https://console.firebase.google.com/project/ict-hub-a2a85/authentication/users). Make sure Email/Password sign-in is enabled under Sign-in method, then add one administrator account.
+3. Open Firestore > Rules. Copy the rules from [firestore.rules](https://github.com/bhayga-sanka/ict-hub/blob/main/firestore.rules).
+4. Replace `REPLACE-WITH-ADMIN-EMAIL` with the exact administrator email you created in Firebase Authentication. Publish the rules.
+5. Open the deployed Student Manager site and sign in using that administrator email/password.
+
+The app stores records in three Firestore collections: `students`, `attendance`, and `marks`. They are created automatically when the first record is saved.
+
+Security: the rules allow access only to the administrator email you set. Do not remove that email condition or use public read/write rules. Keep the administrator password private.
