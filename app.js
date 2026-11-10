@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-const firebaseConfig={apiKey:"AIzaSyAaozs0H_ASAfr_g1NyMBzHLUJQK-ds8AU",authDomain:"ict-hub-a2a85.firebaseapp.com",projectId:"ict-hub-a2a85",storageBucket:"ict-hub-a2a85.firebasestorage.app",messagingSenderId:"432804565441",appId:"1:432804565441:web:3148d24b8f0bb39f769f40"};
+const firebaseConfig={apiKey:"AIzaSyAaozS0H_ASAfr_g1NyMBzHLUJQK-ds8AU",authDomain:"ict-hub-a2a85.firebaseapp.com",projectId:"ict-hub-a2a85",storageBucket:"ict-hub-a2a85.firebasestorage.app",messagingSenderId:"432804565441",appId:"1:432804565441:web:3148d24b8f0bb39f769f40"};
 const auth=getAuth(initializeApp(firebaseConfig));
 const authView=document.getElementById("auth-view"),dashboardView=document.getElementById("dashboard-view"),contentView=document.getElementById("content-view"),authForm=document.getElementById("auth-form"),authMessage=document.getElementById("auth-message"),switchButton=document.getElementById("switch-auth"),nameField=document.getElementById("name-field"),nameInput=document.getElementById("student-name"),authHeading=document.getElementById("auth-heading"),authSubheading=document.getElementById("auth-subheading"),authSubmit=document.getElementById("auth-submit");
 let registerMode=false,currentStudent=null;
